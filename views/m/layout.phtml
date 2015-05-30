@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta name="author" content="<?=config('user')?>">
+  <title>Admin</title>
+  <link rel="stylesheet" href="<?=ABP?>/css/main.css">
+</head>
+<body>
+<?php if (isset($_SESSION['tb_m'])) { ?>
+<nav>
+  <a href="<?=ABP?>/m/list">blog</a>
+  <a href="<?=ABP?>/m/log">access log</a>
+  <a href="<?=ABP?>/m/logout">logout</a>
+  <?php if (isset($universal['url'])) { ?>
+  <a href="<?=$universal['url']?>" <?=$universal['title']?>><?=$universal['title']?></a>
+  <?php }?>
+</nav>
+<?php } ?>
+<main><?=$body?></main>
+<footer>&copy; Copyright 2015 <a href="<?=HOST?>"><?=config('user')?></a>.</footer>
+<script>var dir = '<?=ABP?>/m'</script>
+<script src="<?=ABP?>/js/zepto.min.js"></script>
+<script src="<?=ABP?>/js/app.js"></script>
+</body>
+</html>

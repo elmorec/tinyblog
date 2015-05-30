@@ -1,0 +1,24 @@
+<?php $new = !$it['title_mf'];
+?><form id="blogForm" method="<?=$new?'put':'post'?>" action="<?=$new?ABP.'/m/e':''?>">
+  <input type="hidden" name="id" value="<?=$it['id']?>">
+  <label><span>title</span><input type="text" name="title" value="<?=$it['title']?>" autofocus required></label>
+  <label><span>url</span><input type="text" name="title_mf" value="<?=$it['title_mf']?>" required></label>
+  <?php if ($it['title_mf']) { ?>
+  <label><span>time</span><input type="text" name="ts" value="<?=$it['ts']?>" required></label>
+  <?php } ?>
+  <label><span>author</span><input type="text" name="author" value="<?=$it['author']?>" required></label>
+  <label>
+    <span>status</span>
+    <select name="status">
+      <option value="0"<?=$it['status']==0?' selected':''?>>draft</option>
+      <option value="2"<?=$it['status']==2?' selected':''?>>invisible</option>
+      <option value="1"<?=$it['status']==1?' selected':''?>>publish</option>
+    </select>
+  </label>
+  <label><span>tag</span><div>
+  <?php foreach (get_tags() as $k => $v) { ?>
+  <label><input type="checkbox" name="tags[]" value="<?=$k?>"<?=in_array($v, $tags)?' checked':''?>><?=$v?></label>
+  <?php } ?><a href="tag" style="margin-left:.4em">add</a></div></label>
+  <label><span>excerpt</span><textarea name="excerpt" rows="4" required><?=$it['excerpt']?></textarea></label>
+  <textarea name="content" rows="100" required><?=$it['content']?></textarea>
+</form>

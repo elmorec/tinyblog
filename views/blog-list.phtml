@@ -1,0 +1,22 @@
+<ul>
+<?php
+foreach ($it as $p) { ?>
+<li>
+  <span><?=date_pretty($p['ts'])?></span>
+  <h2><a href="<?=ABP.'/'.str_replace(' ','-',$p['title_mf'])?>"><?=$p['title']?></a></h2>
+</li>
+<?php } ?>
+</ul>
+<div>
+<footer pager>
+<?php
+$p = $meta['page'];
+$path = !isset($meta['tag'])?'':'/tag/'.$meta['tag'];
+if ($p > 1) {
+  echo '<div prev><a href="'.ABP.$path.($p<3?'':'/'.($p-1)).'">prev</a></div>';
+}
+if ($meta['more']) {
+  echo '<div next><a href="'.ABP.$path.'/'.($p+1).'">next</a></div>';
+}
+?>
+</footer>

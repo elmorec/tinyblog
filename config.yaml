@@ -1,0 +1,8 @@
+name: TinyBlog
+version: 1
+handle:
+- compress: if ( out_header["Content-Length"] >= 0 ) compress
+- directoryindex: index.php
+- rewrite:  if (!-f) goto "index.php"
+- rewrite:  if (-f && %{REQUEST_URI} ~ "\.(phtml|ini|md|sql)$") goto "index.php"
+- rewrite:  if (-f && %{REQUEST_URI} ~ "\.php$" && %{REQUEST_URI} !~ "index\.php$") goto "index.php"

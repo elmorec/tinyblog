@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta name="author" content="<?=config('user')?>">
+  <title><?=isset($meta['title'])?(isset($it)&&isset($it[$meta['title']])?$it[$meta['title']]:$meta['title']):'Blog'?></title>
+  <link rel="stylesheet" href="<?=ABP?>/css/main.css">
+</head>
+<body>
+<header>
+  <a href="<?=ABP?>"><img src="<?=ABP?>/images/avatar.jpg" width="60" height="60" draggable="false"></a>
+  <div sns>
+    <a href="<?=config('twitter')?>" class="flaticon-twitter" target="_blank"></a>
+    <a href="<?=config('github')?>" class="flaticon-github" target="_blank"></a>
+    <a href="<?=config('weibo')?>" class="flaticon-weibo" target="_blank"></a>
+    <a href="<?=config('gplus')?>" class="flaticon-gplus" target="_blank"></a>
+  </div>
+</header>
+<nav>
+  <a href="<?=ABP?>">home</a>
+  <a href="<?=ABP?>/about">about</a>
+</nav>
+<main><?=$body?></main>
+<footer>&copy; Copyright 2015 <a href="<?=HOST?>"><?=config('user')?></a>.</footer>
+</body>
+</html>

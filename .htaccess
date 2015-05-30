@@ -1,0 +1,13 @@
+RewriteEngine On
+# RewriteBase /
+
+RewriteRule \.(phtml|ini|md|sql)$ index.php [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond $1 !^(index\.php)
+RewriteRule ^(.*)$ index.php [L]
+
+RewriteCond %{REQUEST_FILENAME} \.php$
+RewriteCond $1 !^(index\.php)
+RewriteRule ^(.*)$ index.php [L]

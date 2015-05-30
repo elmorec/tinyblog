@@ -1,0 +1,10 @@
+<table>
+<tr><th>ts</th><th>title</th><th>status</th><th>&nbsp;</th>
+</tr>
+<?php
+$status = ['draft', 'publish', 'invisible'];
+foreach ($it as $p) { ?>
+<tr><td><?=$p['ts']?></td><td><?=$p['title']?></td><td><?=$status[$p['status']]?></td><td><a href="<?=ABP?>/m/e/<?=str_replace(' ', '-', $p['title_mf'])?>">edit</a></td>
+</tr>
+<?php } ?>
+</table>

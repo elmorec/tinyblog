@@ -1,0 +1,8 @@
+<table>
+<tr><th>ip</th><th>first visit</th><th>last visit</th><th>freq</th></tr>
+<?php
+foreach ($it as $log) { ?>
+<tr><td><?=$log['ip']?></td><td><?=$log['first_ts']?></td><td><?=$log['last_ts']?></td><td><?=$log['freq']?></td>
+</tr>
+<?php } ?>
+</table>

@@ -1,0 +1,12 @@
+<article date="drafted on <?=date_pretty($it['ts'])?>, updated on <?=date_pretty($it['modified_ts'])?>">
+  <h1><?=$it['title']?></h1>
+  <a href="javascript:print()" print title="print"></a>
+  <header>
+    <p><?=date_pretty($it['ts'])?></p>
+    <p><?=$it['author']?></p>
+    <?php if ($meta['tags'][0]) { ?>
+    <p tag><?php foreach($meta['tags'] as $tag) {?><a href="<?=ABP.'/tag/'.$tag?>"><?=$tag?></a><?php }?></p>
+    <?php } ?>
+  </header>
+  <?=parse_md($it['content'])?>
+</article>

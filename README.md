@@ -1,2 +1,2 @@
 # tinyblog
-super lightweight personal blog system using php and markdown
+A super lightweight personal blog system using php and markdown.
