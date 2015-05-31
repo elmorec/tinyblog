@@ -1,5 +1,4 @@
 RewriteEngine On
-# RewriteBase /
 
 RewriteRule \.(phtml|ini|md|sql)$ index.php [L]
 
