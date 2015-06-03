@@ -8,48 +8,34 @@ init your mysql database, run sql in the sql folder
 
 ### then config the config.ini file
 
-yourname
+```ini
+; yourname
+user = yourname
+; timezone
+timezone = timezone
 
-`user = yourname`
+; how many records will display per page
+blog_per_page = 4
 
-your timezone
+; db info
+db_host = dbhost
+db_name = dbname
+db_user = user
+db_passwd = password
 
-`timezone = PRC`
+; location where it lies on your server, such as /blog
+url =
 
-how many records will display per page
+; enable or disable admin module
+admin = 1
 
-`blog_per_page = 4`
+; admin login token
+name = admin
+passwd = 123
 
-db info
-
-`db_host = dbhost`
-
-`db_name = dbname`
-
-`db_user = dbuser`
-
-`db_passwd = dbpassword`
-
-location it lies on your server
-
-`url = /blog`
-
-enable or disable admin module
-
-`admin = 1`
-
-admin login token
-
-`name = admin`
-
-`passwd = 123`
-
-sns address
-
-`github = https://github.com/yourname`
-
-`twitter = https://twitter.com/yourname`
-
-`weibo = http://weibo.com/yourname`
-
-`gplus = https://plus.google.com/`
+; sns address
+github = https://github.com/yourname
+twitter = https://twitter.com/yourname
+weibo = http://weibo.com/yourname
+gplus = https://plus.google.com/
+```
